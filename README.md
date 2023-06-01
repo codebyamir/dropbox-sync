@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 1. Go to: https://dropbox.com/developers/apps
 2. Register your own app
-3. Copy secret *access token* after registering your app (click on Get Token)
+3. Click the Generate button in the App settings to create an access token
 4. Paste that access token to a file called *token_dropbox.txt*. 
 
 ## Usage
