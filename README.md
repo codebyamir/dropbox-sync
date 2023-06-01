@@ -1,5 +1,5 @@
 # dropbox-sync
-Syncs folders from Dropbox to local machine
+Syncs entire folder structure from Dropbox to local machine
 
 ## Setup steps
 
