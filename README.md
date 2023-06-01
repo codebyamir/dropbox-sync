@@ -18,6 +18,6 @@ pip install -r requirements.txt
 ## Usage
 
 ```
-python dropbox_backup.py --source "/Shared/My Files" --destination "/backups/"
+python dropbox_backup.py --source "/Shared/My Dropbox" --destination "/backups/"
 ```
 
