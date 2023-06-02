@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
     try:
         # Read Dropbox access token from file
-        access_token = open(TOKEN_FILE).read()
+        access_token = open(TOKEN_FILE).read().rstrip()
     except FileNotFoundError as err:
         logging.error(err)
         sys.exit('A file named ' + TOKEN_FILE + ' containing the Dropbox access token must exist in this directory.')
