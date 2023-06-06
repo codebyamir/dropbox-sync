@@ -4,6 +4,7 @@ import dropbox
 import logging
 import sys
 import argparse
+import os
 from util import sync
 from dropbox.exceptions import AuthError
 
@@ -13,8 +14,8 @@ logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='[%(asctime)s]
 # Reduce logging noise by not logging INFO statements from the Dropbox SDK 
 logging.getLogger('dropbox').setLevel(logging.WARNING)
 
-TOKEN_FILE='token_dropbox.txt'
-access_token = ''
+# Configuration
+ACCESS_TOKEN = os.environ['DBX_ACCESS_TOKEN']
 
 if __name__ == '__main__':
     argParser = argparse.ArgumentParser()
@@ -24,15 +25,8 @@ if __name__ == '__main__':
     # parse arguments
     args = argParser.parse_args(args=None if sys.argv[1:] else ['--help'])
 
-    try:
-        # Read Dropbox access token from file
-        access_token = open(TOKEN_FILE).read().rstrip()
-    except FileNotFoundError as err:
-        logging.error(err)
-        sys.exit('A file named ' + TOKEN_FILE + ' containing the Dropbox access token must exist in this directory.')
-
     # Authenticate with Dropbox
-    with dropbox.Dropbox(access_token) as dbx:
+    with dropbox.Dropbox(ACCESS_TOKEN) as dbx:
         # Check that access token is valid
         try:
             dbx.users_get_current_account()

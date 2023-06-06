@@ -20,7 +20,11 @@ pip install -r requirements.txt
 6. Under the Permissions tab, select the following permissions:
 - files.metadata.read
 - files.content.read
-7. Paste that access token to a file called `token_dropbox.txt`. 
+7. Under the Settings tab, click the **Generate Token** button
+
+# Configuration
+
+- Create an environment variable named `DBX_ACCESS_TOKEN` for the access token 
 
 ## Usage
 
